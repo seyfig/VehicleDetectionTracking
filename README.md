@@ -32,8 +32,8 @@ The histogram features are extracted with color_hist function in the code cell 1
 In order to find the best spatial and histogram parameters, 5-fold cross validation was performed over the subset images. The subset images have 1196 car images and 1125 notcar images. The code is in the spahist.py file. Several sets of parameters was tested. The tested parameters, selected parameters according to highest average accuracy, and the parameter set that has the highest average accuracy over 5-fold are given in the following table.
 
 
-| Tested            | Tested              | Selected | Selected    | Best   |        |
-| Spatial           | Histogram           | Spatial  | Histogram   | Set    | Acc    |
+
+| Spatial (Test)    | Histogram (Test)    | Spatial  | Histogram   | Best   | Acc    |
 |:-----------------:|:-------------------:|:--------:|:-----------:|:------:|:------:|
 | 8,16,32,64,128    | 8,16,32,64,128      | 8,16,32  | 128,64,32   | 16,32  | 0.9897 |
 | 8,12,16,24,32     | 32,48,64,96,128     | 12,16,32 | 128,96,64   | 12,32  | 0.9905 |
@@ -41,6 +41,7 @@ In order to find the best spatial and histogram parameters, 5-fold cross validat
 | 12,13,14,15,16    | 64,80,96,112,128    | 12,13,16 | 96,112,128  | 12,112 | 0.9935 |
 | 11,12,13,14,15,16 | 100,114,128,142,156 | 14,15,16 | 114,128,142 | 14,142 | 0.9919 |
 | 11,12,13,14,15,16 | 100,114,128,142,156 | 12,14,16 | 100,114,142 | 14,100 | 0.9940 |
+
 
 The highest accuracy depends on the data; however, a spatial value between 12 - 16 performed better. The number of bins value did not have that much effect on the accuracy value. Values greater than 32 performed usually better than the values smaller than 32. Usually, 128 used to perform following tests.
 

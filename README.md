@@ -31,9 +31,9 @@ The spatial features are extracted with bin_spatial function in the code cell 10
 The histogram features are extracted with color_hist function in the code cell 11.
 In order to find the best spatial and histogram parameters, 5-fold cross validation was performed over the subset images. The subset images have 1196 car images and 1125 notcar images. The code is in the spahist.py file. Several sets of parameters was tested. The tested parameters, selected parameters according to highest average accuracy, and the parameter set that has the highest average accuracy over 5-fold are given in the following table.
 
-| Parameters Tested                       | Parameters Selected    | Best Set        |
-|:---------------------------------------:|:----------------------:|:---------------:|
-| Spatial           | Histogram           | Spatial  |  Histogram  | Best   | Acc    |
+
+| Tested            | Tested              | Selected | Selected    | Best   |        |
+| Spatial           | Histogram           | Spatial  | Histogram   | Set    | Acc    |
 |:-----------------:|:-------------------:|:--------:|:-----------:|:------:|:------:|
 | 8,16,32,64,128    | 8,16,32,64,128      | 8,16,32  | 128,64,32   | 16,32  | 0.9897 |
 | 8,12,16,24,32     | 32,48,64,96,128     | 12,16,32 | 128,96,64   | 12,32  | 0.9905 |
@@ -102,23 +102,23 @@ For the following comparison, only cv2 was used as image reader. The parameters 
  * Hog Channel (HOGCH): ALL
 The top 15 parameter sets are given in the following table. The HOGsec column shows the feature extraction time.
 
- | Color | Orient | PPC | CPB | HOGsec | TRNsec | TESTsec | Acc    |
- |:-----:|:------:|:---:|:---:|:------:|:------:|:-------:|:------:|
- | YCrCb | 12     |  8  |  2  | 86.96  | 2.436  | 0.0006  | 0.9891 |
- | YUV   | 12     |  8  |  2  | 86.7   | 2.503  | 0.0017  | 0.989  |
- | YCrCb | 12     |  4  |  2  | 215.8  | 6.5    | 0.0022  | 0.9883 |
- | YCrCb | 10     |  8  |  2  | 85.68  | 2.906  | 0.0015  | 0.9882 |
- | YUV   | 12     |  4  |  2  | 212.62 | 6.465  | 0.0013  | 0.988  |
- | YUV   | 10     |  8  |  2  | 84.66  | 1.416  | 0.0003  | 0.9878 |
- | YCrCb | 10     |  4  |  2  | 212.89 | 5.579  | 0.0016  | 0.9876 |
- | YCrCb | 11     |  4  |  2  | 215.36 | 6.152  | 0.0025  | 0.9876 |
- | YCrCb | 11     |  8  |  2  | 86.37  | 5.403  | 0.0023  | 0.9875 |
- | YUV   | 10     |  4  |  2  | 205.88 | 5.481  | 0.0015  | 0.9874 |
- | YCrCb | 12     |  4  |  1  | 225.85 | 2.002  | 0.0016  | 0.9874 |
- | YUV   | 12     |  4  |  1  | 223.39 | 1.972  | 0.0011  | 0.9871 |
- | YUV   | 11     |  8  |  2  | 85.3   | 1.525  | 0.0023  | 0.987  |
- | LUV   | 10     |  4  |  2  | 201.01 | 6.027  | 0.0006  | 0.987  |
- | YCrCb | 9      |  8  |  2  | 83.47  | 5.304  | 0.0012  | 0.9869 |
+| Color | Orient | PPC | CPB | HOGsec | TRNsec | TESTsec | Acc    |
+|:-----:|:------:|:---:|:---:|:------:|:------:|:-------:|:------:|
+| YCrCb | 12     |  8  |  2  | 86.96  | 2.436  | 0.0006  | 0.9891 |
+| YUV   | 12     |  8  |  2  | 86.7   | 2.503  | 0.0017  | 0.989  |
+| YCrCb | 12     |  4  |  2  | 215.8  | 6.5    | 0.0022  | 0.9883 |
+| YCrCb | 10     |  8  |  2  | 85.68  | 2.906  | 0.0015  | 0.9882 |
+| YUV   | 12     |  4  |  2  | 212.62 | 6.465  | 0.0013  | 0.988  |
+| YUV   | 10     |  8  |  2  | 84.66  | 1.416  | 0.0003  | 0.9878 |
+| YCrCb | 10     |  4  |  2  | 212.89 | 5.579  | 0.0016  | 0.9876 |
+| YCrCb | 11     |  4  |  2  | 215.36 | 6.152  | 0.0025  | 0.9876 |
+| YCrCb | 11     |  8  |  2  | 86.37  | 5.403  | 0.0023  | 0.9875 |
+| YUV   | 10     |  4  |  2  | 205.88 | 5.481  | 0.0015  | 0.9874 |
+| YCrCb | 12     |  4  |  1  | 225.85 | 2.002  | 0.0016  | 0.9874 |
+| YUV   | 12     |  4  |  1  | 223.39 | 1.972  | 0.0011  | 0.9871 |
+| YUV   | 11     |  8  |  2  | 85.3   | 1.525  | 0.0023  | 0.987  |
+| LUV   | 10     |  4  |  2  | 201.01 | 6.027  | 0.0006  | 0.987  |
+| YCrCb | 9      |  8  |  2  | 83.47  | 5.304  | 0.0012  | 0.9869 |
 
 
 #####2.3. Comparison 3
@@ -133,23 +133,23 @@ Another comparison was performed to determine whether the spatial parameter or t
  * Spatial (Spa): 8, 12, 14, 16, 32
  * Number of Bins(Hbin): 64, 114, 128, 142, 192
 
- | #   | imreader | Color | Orient | CPB | HOGCH | Spa | Hbin | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
- |:---:|:--------:|:-----:|:------:|:---:|:-----:|:---:|:----:|:--------:|:------:|:------:|:-------:|:------:|
- |   1 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 114  | 1686     | 72.56  | 1.296  | 0.0186  | 0.994  |
- |   2 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 114  | 1686     | 72.03  | 1.691  | 0.0181  | 0.994  |
- |   3 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 128  | 1728     | 72.22  | 1.594  | 0.0165  | 0.994  |
- |   4 | cv2      | YUV   |   12   |  1  |  ALL  | 12  | 114  | 1350     | 73.23  | 1.343  | 0.0121  | 0.9939 |
- |   5 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 128  | 1728     | 72.82  | 1.336  | 0.0179  | 0.9939 |
- |   6 | cv2      | YUV   |   12   |  1  |  ALL  | 12  | 128  | 1392     | 72.64  | 1.021  | 0.0119  | 0.9939 |
- |   7 | cv2      | YCrCb |   12   |  1  |  ALL  | 14  | 114  | 1506     | 72.57  | 1.22   | 0.0126  | 0.9938 |
- |   8 | cv2      | YCrCb |   12   |  1  |  ALL  | 12  | 114  | 1350     | 72.47  | 1.218  | 0.0114  | 0.9938 |
- |   9 | cv2      | YUV   |   12   |  2  |  ALL  | 12  | 192  | 2304     | 68.75  | 2.144  | 0.021   | 0.9938 |
- |  10 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 64   | 1536     | 72.17  | 1.298  | 0.0222  | 0.9938 |
- |  11 | cv2      | YUV   |   12   |  2  |  ALL  | 14  | 192  | 2460     | 68.67  | 1.556  | 0.0211  | 0.9937 |
- |  12 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 142  | 1770     | 73.08  | 1.541  | 0.0162  | 0.9937 |
- |  13 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 192  | 1920     | 72.41  | 1.987  | 0.0169  | 0.9937 |
- |  14 | cv2      | YUV   |   12   |  2  |  ALL  | 14  | 114  | 2226     | 68.07  | 2.166  | 0.0229  | 0.9937 |
- | 210 | mpimg    | YCrCb |   12   |  1  |  ALL  | 12  | 192  | 1584     | 64.52  | 1.539  | 0.0149  | 0.9921 |
+| #   | imreader | Color | Orient | CPB | HOGCH | Spa | Hbin | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
+|:---:|:--------:|:-----:|:------:|:---:|:-----:|:---:|:----:|:--------:|:------:|:------:|:-------:|:------:|
+|   1 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 114  | 1686     | 72.56  | 1.296  | 0.0186  | 0.994  |
+|   2 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 114  | 1686     | 72.03  | 1.691  | 0.0181  | 0.994  |
+|   3 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 128  | 1728     | 72.22  | 1.594  | 0.0165  | 0.994  |
+|   4 | cv2      | YUV   |   12   |  1  |  ALL  | 12  | 114  | 1350     | 73.23  | 1.343  | 0.0121  | 0.9939 |
+|   5 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 128  | 1728     | 72.82  | 1.336  | 0.0179  | 0.9939 |
+|   6 | cv2      | YUV   |   12   |  1  |  ALL  | 12  | 128  | 1392     | 72.64  | 1.021  | 0.0119  | 0.9939 |
+|   7 | cv2      | YCrCb |   12   |  1  |  ALL  | 14  | 114  | 1506     | 72.57  | 1.22   | 0.0126  | 0.9938 |
+|   8 | cv2      | YCrCb |   12   |  1  |  ALL  | 12  | 114  | 1350     | 72.47  | 1.218  | 0.0114  | 0.9938 |
+|   9 | cv2      | YUV   |   12   |  2  |  ALL  | 12  | 192  | 2304     | 68.75  | 2.144  | 0.021   | 0.9938 |
+|  10 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 64   | 1536     | 72.17  | 1.298  | 0.0222  | 0.9938 |
+|  11 | cv2      | YUV   |   12   |  2  |  ALL  | 14  | 192  | 2460     | 68.67  | 1.556  | 0.0211  | 0.9937 |
+|  12 | cv2      | YCrCb |   12   |  1  |  ALL  | 16  | 142  | 1770     | 73.08  | 1.541  | 0.0162  | 0.9937 |
+|  13 | cv2      | YUV   |   12   |  1  |  ALL  | 16  | 192  | 1920     | 72.41  | 1.987  | 0.0169  | 0.9937 |
+|  14 | cv2      | YUV   |   12   |  2  |  ALL  | 14  | 114  | 2226     | 68.07  | 2.166  | 0.0229  | 0.9937 |
+| 210 | mpimg    | YCrCb |   12   |  1  |  ALL  | 12  | 192  | 1584     | 64.52  | 1.539  | 0.0149  | 0.9921 |
 
 
 As a result, cv2 (0.9799) performed better than mpimg (0.9759) as image reader. It had both higher average and the best performing parameter set with mpimg read come 210th. It is hard to differentiate Hbin values from each other, but the spatial values between 12 and 16 mostly performed better than 8 and 32.
@@ -185,29 +185,31 @@ The average accuracy values for the ensemble, combined, and separate SVMs are gi
 
 The results shown in the following table belong to the search for the models with high accuracy, and for the models with relatively high accuracy and low feature extraction time.
 
- | #   | imreader | Orient | PPC | CPB | HOGCH | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
- |:---:|:--------:|:------:|:---:|:---:|:-----:|:--------:|:------:|:------:|:-------:|:------:|
- |   1 | cv2      |  12    |   8 |  1  | ALL   |   3456   | 106.87 | 2.959  | 0.0322  | 0.9943 |
- |   2 | cv2      |  12    |   8 |  2  | ALL   |   8208   | 100.72 | 1.507  | 0.0731  | 0.994  |
- |   3 | cv2      |  12    |  12 |  1  | ALL   |   2052   | 78.04  | 1.971  | 0.0204  | 0.9935 |
- |   4 | cv2      |  12    |  16 |  1  | ALL   |   1728   | 72.43  | 1.79   | 0.0159  | 0.9935 |
- |   5 | cv2      |  12    |  16 |  2  | ALL   |   2448   | 69.3   | 2.289  | 0.024   | 0.9934 |
- |   6 | cv2      |   9    |   8 |  2  | ALL   |   6444   | 94.05  | 4.263  | 0.0574  | 0.9934 |
- |   7 | cv2      |   9    |   8 |  1  | ALL   |   2880   | 103.16 | 2.317  | 0.026   | 0.9933 |
- |   8 | cv2      |   9    |  16 |  2  | ALL   |   2124   | 66.32  | 1.616  | 0.0324  | 0.9932 |
- |   9 | cv2      |  12    |  12 |  2  | ALL   |   3456   | 71.25  | 1.865  | 0.0344  | 0.9929 |
- |  10 | cv2      |   9    |  16 |  1  | ALL   |   1584   | 70.11  | 1.712  | 0.0156  | 0.9929 |
- |   - | cv2      |   9    |  16 |  1  | 0     |   1296   | 35.34  | 1.323  | 0.0116  | 0.9886 |
- |   - | cv2      |  12    |  16 |  1  | 0     |   1344   | 35.88  | 1.369  | 0.0117  | 0.9889 |
- |   - | cv2      |   6    |  16 |  2  | 0     |   1368   | 33.14  | 1.664  | 0.0127  | 0.986  |
- |   - | cv2      |  12    |  12 |  1  | 0     |   1452   | 37.77  | 1.727  | 0.0132  | 0.988  |
- |   - | cv2      |   9    |  12 |  1  | 0     |   1377   | 37.11  | 1.624  | 0.0138  | 0.9874 |
- |   - | cv2      |   9    |  12 |  2  | 0     |   1728   | 34.55  | 2.103  | 0.015   | 0.9885 |
- |   - | cv2      |   9    |  16 |  2  | 0     |   1476   | 33.78  | 1.567  | 0.0151  | 0.9889 |
- |   - | cv2      |   6    |   8 |  1  | 0     |   1536   | 45.19  | 1.758  | 0.0153  | 0.9876 |
- |   - | cv2      |   9    |   8 |  1  | 0     |   1728   | 46.27  | 2.229  | 0.0162  | 0.9899 |
- |   - | mpimg    |  12    |   8 |  1  | 0     |   1920   | 45.41  | 2.464  | 0.0166  | 0.9864 |
- |   - | mpimg    |   9    |   8 |  1  | 0     |   1728   | 45.07  | 2.244  | 0.0175  | 0.987  |
+
+| #   | imreader | Orient | PPC | CPB | HOGCH | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
+|:---:|:--------:|:------:|:---:|:---:|:-----:|:--------:|:------:|:------:|:-------:|:------:|
+|   1 | cv2      |  12    |   8 |  1  | ALL   |   3456   | 106.87 | 2.959  | 0.0322  | 0.9943 |
+|   2 | cv2      |  12    |   8 |  2  | ALL   |   8208   | 100.72 | 1.507  | 0.0731  | 0.994  |
+|   3 | cv2      |  12    |  12 |  1  | ALL   |   2052   | 78.04  | 1.971  | 0.0204  | 0.9935 |
+|   4 | cv2      |  12    |  16 |  1  | ALL   |   1728   | 72.43  | 1.79   | 0.0159  | 0.9935 |
+|   5 | cv2      |  12    |  16 |  2  | ALL   |   2448   | 69.3   | 2.289  | 0.024   | 0.9934 |
+|   6 | cv2      |   9    |   8 |  2  | ALL   |   6444   | 94.05  | 4.263  | 0.0574  | 0.9934 |
+|   7 | cv2      |   9    |   8 |  1  | ALL   |   2880   | 103.16 | 2.317  | 0.026   | 0.9933 |
+|   8 | cv2      |   9    |  16 |  2  | ALL   |   2124   | 66.32  | 1.616  | 0.0324  | 0.9932 |
+|   9 | cv2      |  12    |  12 |  2  | ALL   |   3456   | 71.25  | 1.865  | 0.0344  | 0.9929 |
+|  10 | cv2      |   9    |  16 |  1  | ALL   |   1584   | 70.11  | 1.712  | 0.0156  | 0.9929 |
+|   - | cv2      |   9    |  16 |  1  | 0     |   1296   | 35.34  | 1.323  | 0.0116  | 0.9886 |
+|   - | cv2      |  12    |  16 |  1  | 0     |   1344   | 35.88  | 1.369  | 0.0117  | 0.9889 |
+|   - | cv2      |   6    |  16 |  2  | 0     |   1368   | 33.14  | 1.664  | 0.0127  | 0.986  |
+|   - | cv2      |  12    |  12 |  1  | 0     |   1452   | 37.77  | 1.727  | 0.0132  | 0.988  |
+|   - | cv2      |   9    |  12 |  1  | 0     |   1377   | 37.11  | 1.624  | 0.0138  | 0.9874 |
+|   - | cv2      |   9    |  12 |  2  | 0     |   1728   | 34.55  | 2.103  | 0.015   | 0.9885 |
+|   - | cv2      |   9    |  16 |  2  | 0     |   1476   | 33.78  | 1.567  | 0.0151  | 0.9889 |
+|   - | cv2      |   6    |   8 |  1  | 0     |   1536   | 45.19  | 1.758  | 0.0153  | 0.9876 |
+|   - | cv2      |   9    |   8 |  1  | 0     |   1728   | 46.27  | 2.229  | 0.0162  | 0.9899 |
+|   - | mpimg    |  12    |   8 |  1  | 0     |   1920   | 45.41  | 2.464  | 0.0166  | 0.9864 |
+|   - | mpimg    |   9    |   8 |  1  | 0     |   1728   | 45.07  | 2.244  | 0.0175  | 0.987  |
+
 
 The parameters used in this experiment are as follows:
  * imreader: cv2, mpimg
@@ -268,10 +270,10 @@ The conclusions up to this point were as follows:
 
 As the final models, the 9th model in the previous table was used as the fast model, and the 6th model from comparison 6 was used as the best model according to accuracy value.
 
- | Name | Comparison | # | imreader | Color | Orient | PPC | CPB | HOGCH | Spatial  | Hbin | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
- |:----:|:----------:|:-:|:--------:|:-----:|:------:|:---:|:---:|:-----:|:--------:|:----:|:--------:|:------:|:------:|:-------:|:------:|
- | Fast |    6       | 9 | cv2      | YCrCb |  10    |   8 |  2  | [0-1] |   16     | None |   4688   | 58.86  | 2.622  | 0.0445  | 0.9911 |
- | Best |    7       | 6 | cv2      | YCrCb |   9    |   8 |  2  | ALL   |   16     | 128  |   6444   | 94.05  | 4.263  | 0.0574  | 0.9934 |
+| Name | Comparison | # | imreader | Color | Orient | PPC | CPB | HOGCH | Spatial  | Hbin | FeatVLen | HOGsec | TRNsec | TESTsec | Acc    |
+|:----:|:----------:|:-:|:--------:|:-----:|:------:|:---:|:---:|:-----:|:--------:|:----:|:--------:|:------:|:------:|:-------:|:------:|
+| Fast |    6       | 9 | cv2      | YCrCb |  10    |   8 |  2  | [0-1] |   16     | None |   4688   | 58.86  | 2.622  | 0.0445  | 0.9911 |
+| Best |    7       | 6 | cv2      | YCrCb |   9    |   8 |  2  | ALL   |   16     | 128  |   6444   | 94.05  | 4.263  | 0.0574  | 0.9934 |
 
 
 The final code for performing parameters test is given in crossval.py.
@@ -322,18 +324,23 @@ The convolutional neural network also trained with the complete data. 20% of the
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 
 Project video processed with Fast SVM model
+
 [![Fast SVM Model](http://img.youtube.com/vi/3yDY6cbXnUo/0.jpg)](http://www.youtube.com/watch?v=3yDY6cbXnUo)
 
 Project video processed with Best SVM model
+
 [![Best SVM Model](http://img.youtube.com/vi/L0EqaZ05xcQ/0.jpg)](http://www.youtube.com/watch?v=L0EqaZ05xcQ)
 
 Project video processed with Fast SVM model
+
 [![CNN Model](http://img.youtube.com/vi/c2jljF3uGW4/0.jpg)](http://www.youtube.com/watch?v=c2jljF3uGW4)
 
 Project video processed with Fast SVM model
+
 [![Best SVM Model Debug](http://img.youtube.com/vi/Z13f_N3mp5s/0.jpg)](http://www.youtube.com/watch?v=Z13f_N3mp5s)
 
 Project video processed with Fast SVM model
+
 [![CNN Model Debug](http://img.youtube.com/vi/Hem4gS7-IRE/0.jpg)](http://www.youtube.com/watch?v=Hem4gS7-IRE)
 
 
@@ -377,10 +384,10 @@ Developing models other parameters, especially the parameters obtained from the 
 
 Process times and the models are given in the table below:
 
- | Model | Process Time |
- |:-----:|:------------:|
- | Fast  |    7:15      |
- | Best  |    1:50      |
- | CNN   |   13:13      |
+| Model | Process Time |
+|:-----:|:------------:|
+| Fast  |    7:15      |
+| Best  |    1:50      |
+| CNN   |   13:13      |
 
  The tracking pipeline was optimized for the Fast SVM model, therefore, the performance of other models can be improved.

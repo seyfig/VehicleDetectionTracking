@@ -385,10 +385,10 @@ Developing models other parameters, especially the parameters obtained from the 
 
 Process times and the models are given in the table below:
 
-| Model | Process Time |
-|:-----:|:------------:|
-| Fast  |    7:15      |
-| Best  |    1:50      |
-| CNN   |   13:13      |
+| Model | Process Time | FPS   | Accuracy |
+|:-----:|:------------:|:-----:|:--------:|
+| Fast  |    7:15      |  2.80 |  99.11%  |
+| Best  |   13:13      |  1.62 |  99.34%  |
+| CNN   |    1:50      | 11.40 |  99.24%  |
 
  The tracking pipeline was optimized for the Fast SVM model, therefore, the performance of other models can be improved.
